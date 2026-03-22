@@ -18,6 +18,67 @@
   <link rel="stylesheet" href='styles/style.css'>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
+<style>
+  body{
+    overflow:hidden;
+    background-color: #fff;
+    margin:0px;
+    background-image: none;
+    box-sizing: border-box;
+  }
+  .boxbox {
+    width:100%;
+    height:100%;
+    margin:0px;
+    border:0px;
+    display:flex;
+    background:none;
+  }
+  .contactleft{
+    position:fixed;
+    width:35%;
+    min-width: 35%;
+    min-height: 100%;
+    z-index: -1;
+    height:100%;
+     margin-top:-45px;
+     background-image:url("images/beach.png");
+     background-repeat: no-repeat;
+     background-size:cover;
+     float:left;
+  }
+  .contactleft img{
+    width:100%;
+    height:100%;
+  }
+  .contactright{
+    position:relative;
+    background:#fff;
+    z-index: -2;
+    display:flex;
+    flex-direction: column;
+    width:65%;
+    height:100%;
+    margin-top:50px;
+    padding-left:50px;
+    float:right;
+    margin-left:35%;
+  }
+  input, textarea{
+    border:0px;
+    border-bottom:1px solid black;
+    padding:5px;
+  }
+  button{
+    background-color:#3b3636;
+    border:0
+  }
+  button:hover{
+    background-color: #818386 !important;
+  }
+  
+  
+</style>
 <body>
   
   <header>
@@ -43,20 +104,21 @@
   </header>
   
     <div class="boxbox">
-    <h1>Contact Us</h1>
+      <div class="contactleft"></div>
+      <div class="contactright"><h1>Contact Us</h1>
    <form class="contact-form" action="mailto:albert.han@tts.edu.sg" method="get" enctype="text/plain">
     <label>
-      Name:
+      Name: <br>
       <input type="text" placeholder="Your Name">
     </label>
     <br> <br>
     <label>
-      Email:
+      Email:<br>
       <input type="email" name="cc" placeholder="you@example.com" id="email">
     </label> <br> <br>
     <label>
-    Subject
-    <input type="text" id="subject" required>
+    Subject: <br>
+    <input type="text" id="subject" placeholder="My Subject" required>
   </label>
   <br> <br>
 <label>
@@ -69,7 +131,8 @@
 
 
 
-   </form>
+   </form></div>
+    
    <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();

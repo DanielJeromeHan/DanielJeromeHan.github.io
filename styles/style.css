@@ -227,6 +227,7 @@ button:before {
     position: fixed;
     text-align: center;
     color:aliceblue;
+    height:20px;
 }
 .team-grid {
       display: grid;
