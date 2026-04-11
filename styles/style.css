@@ -1,9 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 body{
     display: flex;
     margin:0;
+    height:100%;
     color: #676767;
-    background-color:wheat;
-    background-image:url("../images/jelly.jpg");
+    background-color:rgb(221, 221, 221);
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -11,21 +12,26 @@ body{
     background-size: cover;
 }
 .boxbox{
-    margin-top: 5% ;
-    background-color: rgba(255,255,255,0.8);
+    margin-top: 13vh;
+    background-color:#fff;
     width: 80%;
-    height: 80%;
-    min-height:750px;
+    height: 75vh !important;
+    min-height:100%;
     padding-left: 25px;
-    padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 25px;
-    border: 10px solid rgb(6, 0, 65);
+    border: 5px solid rgb(6, 0, 65);
     border-radius: 20px;
     overflow-y: auto;
 }
 h1 {
-    color:chocolate;
+    color:coral;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+    border-left: 5px solid lightskyblue;
+    padding-left:10px;
+
 }
 img{
     width:200px;
@@ -38,6 +44,20 @@ header {
   left: 0;
   padding: 0 100px;
     background-color: rgba(0, 6, 53, 0.8);
+     font-family: 'Open Sans', sans-serif;
+
+/* asymmetric bulge (left) → taper (right) */
+clip-path: polygon(
+0 0,
+100% 0,
+100% 85%,
+85% 80%,
+65% 75%,
+45% 85%,
+25% 100%,
+10% 95%,
+0 90%
+);
   box-sizing: border-box;
   width: 100%;
 }
@@ -104,10 +124,11 @@ header nav ul li ul li {
 }
 
 header nav ul li a {
-  
+  margin-top: -10px;
   height: 75px;
   line-height: 75px;
   padding: 0 20px;
+  padding-bottom:10px ;
   color: #fff;
   text-decoration: none;
   display: block;
@@ -129,10 +150,11 @@ header nav ul li a.active {
   display: none;
 }
 
-@media (max-width: 800px)  {
+@media (max-width: 1000px)  {
   
   header {
     padding: 0 20px;
+    padding-bottom:30px;
   }
   
   .menu-toggle {
@@ -182,6 +204,17 @@ header nav ul li a.active {
 label {
 font-weight:bold;
 }
+.logo-title{
+  color:white;
+  text-transform: uppercase;
+  float:right;
+  width:150px;
+  font-size:17px;
+  line-height:17px;
+  margin-left:25px;
+  margin-top:19px;
+  font-family:'Open Sans', sans-serif;
+}
 textarea{
 min-height: 100px;
 min-width: 80%;
@@ -222,6 +255,7 @@ button:before {
 }
 .footer {
     width: 100%;
+    padding:10px;
     background:#09002e;
     bottom:0px;
     position: fixed;
