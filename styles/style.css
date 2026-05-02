@@ -1,5 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 body{
+  
     display: flex;
     margin:0;
     height:100%;
@@ -312,6 +317,17 @@ button:before {
   position: relative;
   color: white;
   text-align: center;
-  top: 50%;
+  top: 45%;
   transform: translateY(-50%);
+}
+.video-overlay h1 {
+  font-size: 75px;
+  color:   #ed580e;
+    font-family: "Noto Sans", sans-serif;
+    font-weight:700;
+}
+.video-overlay p {
+  font-size: 30px;
+  color:   aliceblue;
+   font-family: "Noto Sans", sans-serif;
 }
