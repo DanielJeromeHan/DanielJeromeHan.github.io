@@ -395,6 +395,9 @@ button:before {
   height: 100vh; /* full screen */
   overflow: hidden;
   z-index: -3;
+  background-image: url("../images/clown.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .videobox iframe {
   width: 100%;
@@ -424,12 +427,13 @@ button:before {
 }
 .video-overlay h1 {
   font-size: 75px;
-  color:   #ed580e;
+  color: rgb(26, 57, 151);
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     font-family: "Noto Sans", sans-serif;
     font-weight:700;
 }
 .video-overlay p {
   font-size: 30px;
-  color:   aliceblue;
+ color:   aliceblue;
    font-family: "Noto Sans", sans-serif;
 }
