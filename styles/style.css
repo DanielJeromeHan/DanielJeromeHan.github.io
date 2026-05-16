@@ -48,92 +48,81 @@ header {
   top: 0;
   left: 0;
   padding: 0 100px;
-    background-color: rgba(0, 6, 53, 0.8);
-     font-family: 'Open Sans', sans-serif;
-
-/* asymmetric bulge (left) → taper (right) */
-clip-path: polygon(
-0 0,
-100% 0,
-100% 85%,
-85% 80%,
-65% 75%,
-45% 85%,
-25% 100%,
-10% 95%,
-0 90%
-);
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   width: 100%;
+  min-height: 105px;
+  z-index: 9999;
+  overflow: visible;
 }
 
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 6, 53, 0.8);
+  z-index: 0;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 72%,
+    88% 76%,
+    72% 84%,
+    55% 78%,
+    38% 88%,
+    22% 100%,
+    8% 94%,
+    0 86%
+  );
+}
+
+
 header .logo {
-  color: #fff;
-  height: 50px;
-  line-height: 50px;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
   float: left;
+  height: 90px;
+  color: #fff;
   font-weight: bold;
 }
+
 header .logo img {
-  width:75px;
-  height:75px;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
 }
+
+.logo-title {
+  color: white;
+  text-transform: uppercase;
+  width: 150px;
+  font-size: 17px;
+  line-height: 17px;
+  margin-left: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 header nav {
   float: right;
-  
 }
 
 header nav ul {
   margin: 0;
   padding: 0;
+  margin-top: -10px;
   display: flex;
 }
 
 header nav ul li {
-  
   list-style: none;
   position: relative;
 }
 
-header nav ul li.sub-menu:before {
-  
-  content: '\f0d7';
-  font-family: fontAwesome;
-  position: absolute;
-  line-height: 50px;
-  color: #fff;
-  right: 5px;
-}
-
-header nav ul li.active.sub-menu:before {
-    content: '\f0d8';
-}
-
-header nav ul li ul {
-  
-  position: absolute;
-  left: 0;
-  background: #333;
-  display: none;
-}
-
-header nav ul li.active ul {
-  
-  display: block;
-}
-header nav ul li ul li {
-  
-  display: block;
-  width: 200px;
-}
-
 header nav ul li a {
-  margin-top: -10px;
-  height: 75px;
-  line-height: 75px;
+  height: 90px;
+  line-height: 90px;
   padding: 0 20px;
-  padding-bottom:10px ;
   color: #fff;
   text-decoration: none;
   display: block;
@@ -141,85 +130,190 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-  
   color: #fff;
-  background: #2196f3
+  background: #2196f3;
+}
+
+header nav ul li ul {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  background: #333;
+  display: none;
+  z-index: 10000;
+}
+
+header nav ul li:hover > ul {
+  display: block;
+}
+
+header nav ul li ul li {
+  display: block;
+  width: 220px;
+}
+
+header nav ul li ul li a {
+  height: auto;
+  line-height: 20px;
+  padding: 15px 20px;
 }
 
 .menu-toggle {
   color: #fff;
   float: right;
-  line-height: 50px;
+  line-height: 90px;
   font-size: 24px;
   cursor: pointer;
   display: none;
 }
 
-@media (max-width: 1000px)  {
-  
+header nav {
+  position: relative;
+  z-index: 10;
+}
+
+.menu-toggle {
+  position: relative;
+  z-index: 20;
+}
+
+header .logo {
+  position: relative;
+  z-index: 20;
+}
+
+header nav ul li ul {
+  z-index: 99999;
+}
+
+@media (max-width: 1000px) {
+
   header {
-    padding: 0 20px;
-    padding-bottom:30px;
-  }
-  
-  .menu-toggle {
-    
-    display: block;
-  }
-  
-  header nav {
-    
     position: absolute;
-    width: 100%;
-    height: calc(100vh - 50px);
-    background: #333;
-    top: 50px;
-    left: -100%;
-    transition: 0.5s;  
-  }
-  
-  header nav.active {
-    
+    top: 0;
     left: 0;
-  } 
-  
+    width: 100%;
+    min-height: 105px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  header .logo {
+    float: none;
+    height: 90px;
+    display: flex;
+    align-items: center;
+  }
+
+  header .logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+  }
+
+  header::before {
+  z-index: 0;
+}
+
+header .logo,
+header nav,
+.menu-toggle {
+  position: relative;
+  z-index: 2;
+}
+
+  .logo-title {
+    float: none;
+    width: 130px;
+    margin: 0 0 0 15px;
+    font-size: 14px;
+    line-height: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    z-index: 999999;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  header nav {
+    float: none;
+    position: absolute;
+    top: 75px;
+    left: -100%;
+    width: 100%;
+    background: #333;
+    z-index: 99999;
+    transition: left 0.35s ease;
+  }
+
+  header nav.active {
+    left: 0;
+  }
+
   header nav ul {
     display: block;
-    text-align: center;    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
   }
-  
+
+  header nav ul li {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
   header nav ul li a {
-    
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    display: block;
+    height: auto;
+    line-height: 20px;
+    margin: 0;
+    padding: 18px 20px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
   }
-  
-  header nav ul li.active ul {
-    
-      position: relative;
-      background: #003e6f;
+
+  header nav ul li a:hover {
+    background: #2196f3;
   }
-  
+
+  header nav ul li ul {
+    position: static;
+    display: none;
+    width: 100%;
+    background: #003e6f;
+  }
+
+  header nav ul li.active > ul {
+    display: block;
+  }
+
   header nav ul li ul li {
-    
     width: 100%;
   }
+
+  header nav ul li.sub-menu::before {
+    right: 20px;
+    top: 0;
+    line-height: 56px;
+    z-index: 3;
+  }
 }
-.contact-form{
-}
-label {
-font-weight:bold;
-}
-.logo-title{
-  color:white;
-  text-transform: uppercase;
-  float:right;
-  width:150px;
-  font-size:17px;
-  line-height:17px;
-  margin-left:25px;
-  margin-top:19px;
-  font-family:'Open Sans', sans-serif;
-}
+
 textarea{
 min-height: 100px;
 min-width: 80%;
@@ -258,6 +352,8 @@ button:before {
 	background: #04AA6D !important;
 	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
+
+
 .footer {
     width: 100%;
     padding:10px;
