@@ -16,11 +16,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Marine Website</title>
   <link rel="stylesheet" href='styles/style.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-
 <body>
-  
+  <div id="page1">
   <header>
     <div class="logo"><img src="images/newestlogo.png"><div class="logo-title">
    Tanglin Marine Conservation</div> </div>
@@ -61,6 +61,7 @@
   </div>
     <div class="footer">
         © Copyright 2026
+        </div>
     </div>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script>
@@ -79,6 +80,7 @@
     document.querySelector('.menu-toggle').addEventListener('click', function () {
   document.querySelector('nav').classList.toggle('active');
 });
+</script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
@@ -104,5 +106,6 @@
     });
   });
 </script>
+  <script src="scripts/script2.js"></script>
 </body>
 </html>
