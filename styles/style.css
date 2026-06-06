@@ -20,6 +20,7 @@ url("../images/shark.jpg");
     flex-direction: column;
     justify-content: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 body, html, * {
     cursor: url("../images/newestnemo.png"),auto;
@@ -340,7 +341,7 @@ width: 81%;
 button:hover {
 	color: #fff !important;
 	text-shadow: nthree;
-  background: #04AA6D !important;
+  background: transparent !important;
 }
 button:hover:before {
 	left: 0%;
@@ -357,7 +358,7 @@ button:before {
 	z-index: -1;
 	content: '';
 	color: #fff !important;
-	background: #04AA6D !important;
+	background: transparent !important;
 	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
@@ -399,11 +400,11 @@ button:before {
 
 .videobox {
   position: relative;
+  left: 0;
   width: 100%;
   height: 100vh; /* full screen */
   overflow: hidden;
   z-index: -3;
-  background-image: url("../images/clown.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
